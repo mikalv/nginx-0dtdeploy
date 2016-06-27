@@ -16,7 +16,11 @@
 	  "nginx-0dtdeploy": "bin/nginx-0dtdeploy"
 	},
   "author": "Mikal Villa <mikal@sigterm.no>",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
+	"repository": {
+	  "type" : "git",
+		"url" : "https://github.com/mikalv/nginx-0dtdeploy.git"
+	},
   "dependencies": {
     "optimist": "^0.6.1"
   }
