@@ -1,7 +1,7 @@
 {
   "name": "nginx-0dtdeploy",
-  "version": "1.0.0",
-  "description": "Changes the nginx config to avoid any downtime in load-balancing sitatuions",
+  "version": "1.0.1",
+  "description": "This is a really simple script that covers the load balance switch for zero downtime deployments. It's designed to run on a server that load balance docker images with Nginx",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
