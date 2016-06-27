@@ -12,6 +12,9 @@
     "load-balance",
     "deployment"
   ],
+	"bin": {
+	  "nginx-0dtdeploy": "bin/nginx-0dtdeploy"
+	},
   "author": "Mikal Villa <mikal@sigterm.no>",
   "license": "ISC",
   "dependencies": {
