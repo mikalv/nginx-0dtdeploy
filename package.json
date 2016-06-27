@@ -1,0 +1,20 @@
+{
+  "name": "nginx-0dtdeploy",
+  "version": "1.0.0",
+  "description": "Changes the nginx config to avoid any downtime in load-balancing sitatuions",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nginx",
+    "0downtime",
+    "load-balance",
+    "deployment"
+  ],
+  "author": "Mikal Villa <mikal@sigterm.no>",
+  "license": "ISC",
+  "dependencies": {
+    "optimist": "^0.6.1"
+  }
+}
