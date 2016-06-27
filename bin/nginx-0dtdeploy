@@ -3,6 +3,7 @@
 process.title = 'nginx-0dtdeploy';
 
 var argv = require('optimist').argv;
+var exec = require('child_process').exec;
 var fs = require('fs');
 
 if (argv.f === undefined || argv.f === true) {
@@ -32,6 +33,13 @@ function isArray(testObj) {
   return false;
 }
 
+function reloadNginx() {
+  exec('nginx -s reload', function callback(error, stdout, stderr){
+    console.log(stderr);
+    console.log(stdout);
+  });
+}
+
 var data = "";
 
 if (isArray(argv.h)) {
@@ -44,5 +52,22 @@ if (isArray(argv.h)) {
 
 var filename = argv.f;
 
-console.log('Output: ');
-console.log(data);
+fs.writeFile(filename, data, function(err) {
+	if (err) {
+    return console.log(err);
+  }
+  console.log("Upstreams updated");
+  if (argv.c !== undefined) {
+    exec('nginx -t', function callback(error, stdout, stderr){
+			console.log(stderr);
+      if (stderr.indexOf("syntax is ok") > -1) {
+        console.log('ALL OK!');
+        //console.log(stdout);
+        // Reload time
+        if (argv.r !== undefined && argv.r === true) reloadNginx();
+      } else {
+        return -5;
+      }
+    });
+  }
+});
