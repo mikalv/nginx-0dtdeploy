@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+process.title = 'nginx-0dtdeploy';
+
 var argv = require('optimist').argv;
 var fs = require('fs');
 
